@@ -1,0 +1,369 @@
+.container {
+    display: grid;
+    height: 100vh;
+    background-color: white;
+}
+
+.container .header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-column: span 2;
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.container .header * {
+    height: 100%;
+    display: flex;
+}
+
+.container .header .start {
+    height: 50%;
+    justify-content: space-between;
+}
+.container .header .center {
+    display: flex;
+    align-items: center;
+}
+
+.container .header .end {
+    display: flex;
+    align-items: center;
+}
+.create-button {
+    display: flex;
+    align-items: center;
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 30px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #000;
+    margin-right: 16px;
+}
+
+.create-button svg {
+    margin-right: 8px;
+}
+
+.notification {
+    position: relative;
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+.notification svg {
+    width: 24px;
+    height: 24px;
+}
+
+.avatar svg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    overflow: hidden;
+    padding: 0 10px;
+    width: 600px;
+    background-color: white;
+}
+
+.search-bar form {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+}
+
+.search-bar input {
+    flex: 1;
+    border: none;
+    padding: 12px 10px;
+    font-size: 16px;
+    outline: none;
+    background-color: transparent;
+}
+
+.search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.search-button svg {
+    width: 24px;
+    height: 24px;
+    fill: #555;
+}
+
+.voice-button {
+    width: 40px;
+    height: 40px;
+    background-color: #f1f1f1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.voice-button svg {
+    width: 24px;
+    height: 24px;
+    fill: #1f1f1f;
+}
+.container .left {
+    grid-area: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+.sidebar-element {
+    width: 90%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    border-radius: 5px;
+    height: 2rem;
+    padding: 2px;
+    padding-left: 5px;
+}
+.sidebar-element:hover {
+    background-color: lightgrey;
+}
+.container .main {
+    grid-area: main;
+}
+
+#voice-button {
+    background-color: lightgrey;
+    border-radius: 50%;
+    width: 80%;
+    height: 80%;
+}
+
+.video_container {
+    display: grid;
+    height: 100vh;
+    grid-gap: 10px 10px;
+}
+
+.guide_icon {
+    border-radius: 100%;
+}
+.guide_icon:hover {
+    background-color: grey;
+}
+
+.video_navbar {
+    display: flex;
+    height: 3rem;
+    align-items: center;
+}
+
+.video_navbar .element {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
+    border-radius: 5px;
+    margin-left: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    background-color: lightgrey;
+    flex-shrink: 0;
+}
+
+.video_navbar .element:hover {
+    background-color: grey;
+}
+
+.video {
+    aspect-ratio: 16/12;
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+}
+
+#avatar-container {
+    border-radius: 50%;
+    background-color: lightgrey;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#thumbnail {
+    height: 75%;
+}
+
+#details {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+#video-title {
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
+.video-meta {
+    font-size: 0.8rem;
+    color: lightslategray;
+}
+
+@media (min-width: 1536px) {
+    .container {
+        grid-template-areas:
+            "header header"
+            "left main";
+        grid-template-columns: 1fr 5fr;
+        grid-template-rows: 3rem auto;
+    }
+    .video_container {
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 1535px) and (min-width: 1280px) {
+    .container {
+        grid-template-areas:
+            "header header"
+            "left main";
+        grid-template-columns: 1fr 5fr;
+        grid-template-rows: 6vh 94vh;
+    }
+    .video_container {
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 1279px) and (min-width: 1024px) {
+    .container {
+        grid-template-areas:
+            "header header"
+            "left main";
+        grid-template-columns: 1fr 14fr;
+        grid-template-rows: 3rem auto;
+    }
+    .video_container {
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .show-on-large {
+        display: none;
+    }
+    #sidebar-element-title {
+        display: none;
+    }
+}
+
+@media (max-width: 1023px) and (min-width: 769px) {
+    .container {
+        grid-template-areas:
+            "header header"
+            "left main";
+        grid-template-columns: 1fr 14fr;
+        grid-template-rows: 3rem auto;
+    }
+    .video_container {
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 1fr;
+    }
+    .show-on-large {
+        display: none;
+    }
+    #sidebar-element-title {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-areas:
+            "header header"
+            "main main";
+        grid-template-columns: auto;
+        grid-template-rows: 3rem auto;
+    }
+    .video_container {
+        grid-template-rows: auto;
+        grid-template-columns: 1fr;
+    }
+}
+
+hr {
+    color: #9e9b9b;
+}
+/* 기본 스타일 */
+.search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    overflow: hidden;
+    padding: 0 10px;
+    width: 600px;
+    background-color: white;
+    transition: width 0.3s ease; /* 너비 변화에 애니메이션 추가 */
+}
+
+.search-bar input {
+    flex: 1;
+    border: none;
+    padding: 12px 10px;
+    font-size: 16px;
+    outline: none;
+    background-color: transparent;
+}
+
+.search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.search-button svg {
+    width: 24px;
+    height: 24px;
+    fill: #555;
+}
+
+/* 화면 너비가 768px 이하일 때 */
+@media (max-width: 768px) {
+    .search-bar {
+        width: auto; /* 너비를 자동으로 설정 */
+        padding: 0; /* 패딩 제거 */
+    }
+
+    .search-bar input {
+        display: none; /* 입력 필드를 숨김 */
+    }
+
+    .search-button {
+        padding: 0; /* 버튼 패딩 제거 */
+    }
+}
